@@ -20,10 +20,21 @@ function getValues() {
     }   
 }
 
-function checkForPalindrome() {
+function checkForPalindrome(msg) {
+    
+    let output = '';
+
+    // for loop
+    for(let i = msg.length - 1; 1 >= 0; i--){
+        let letter = msg[i];
+        output += letter
+    }
+
+    return output;
+
 
 }
 
-function displayResults() {
+function displayResults(results) {
 
 }
