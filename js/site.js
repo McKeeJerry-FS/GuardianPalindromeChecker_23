@@ -23,18 +23,33 @@ function getValues() {
 function checkForPalindrome(msg) {
     
     let output = '';
-
+    let pal = new Boolean(false);
+    
     // for loop
-    for(let i = msg.length - 1; 1 >= 0; i--){
+    for(let i = msg.length - 1; i >= 0; i--){
         let letter = msg[i];
         output += letter
     }
-
-    return output;
-
-
+    
+    
+    if(output.toLowerCase != msg.toLowerCase){
+        return [false, '']
+    }
+    else {
+        return [true, output];
+    }
+    // return results of the check AND reversed string 
+    
 }
 
 function displayResults(results) {
+    if(results[0] == true){
+        document.getElementById('msg').textContent = `Your message is a palindrome: ${results[1]}`;
+        document.getElementById('alert').classList.remove('invisible');
+    }
+    else{
+        document.getElementById('msg').textContent = `Your message is not a palindrome.`;
+        document.getElementById('alert').classList.remove('invisible');
+    }
 
 }
