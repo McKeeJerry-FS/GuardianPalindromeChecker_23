@@ -23,7 +23,7 @@ function getValues() {
 function checkForPalindrome(msg) {
     
     let output = '';
-    let pal = new Boolean(false);
+    
     
     // for loop
     for(let i = msg.length - 1; i >= 0; i--){
@@ -31,8 +31,8 @@ function checkForPalindrome(msg) {
         output += letter
     }
     
-    
-    if(output.toLowerCase != msg.toLowerCase){
+    // check to see if msg and output the same forwards and backwards
+    if(output.toLowerCase() != msg.toLowerCase()){
         return [false, '']
     }
     else {
