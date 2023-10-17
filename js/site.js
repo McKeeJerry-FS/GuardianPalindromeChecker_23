@@ -9,7 +9,7 @@ function getValues() {
                 icon: 'error',
                 backdrop: false,
                 title: 'Oops',
-                text: 'Please enter in a message'
+                text: 'Please enter in a message to check for palindome'
             });
     }
     else {
@@ -23,9 +23,10 @@ function getValues() {
 function checkForPalindrome(msg) {
     // variable created for output
     let output = '';
-    let regex = /[^a-zA-Z0-9 ]/g
+    let regex = /[^a-zA-Z0-9 ]/g // accept these characters ONLY!!!
     
     // for loop to run through all characters of a string
+    // decrementing for loop
     for(let i = msg.length - 1; i >= 0; i--){
         let letter = msg[i];
         output += letter
@@ -45,6 +46,8 @@ function checkForPalindrome(msg) {
 function displayResults(results) {
     // if results return as "TRUE"
     if(results[0] == true){
+        // set the message for the alert
+        document.getElementById('alert-heading').textContent = `Success!!!`;
         document.getElementById('msg').textContent = `Your message IS a palindrome: ${results[1]}`;
         // remove these existing classes
         document.getElementById('alert').classList.remove('invisible');
@@ -55,6 +58,8 @@ function displayResults(results) {
     }
     // If the results returns as "FALSE"
     else{
+        // set the message for the alert
+        document.getElementById('alert-heading').textContent = `Sorry...`;
         document.getElementById('msg').textContent = `Your message IS NOT a palindrome: ${results[1]}`;
         // remove these existing classes
         document.getElementById('alert').classList.remove('invisible');
