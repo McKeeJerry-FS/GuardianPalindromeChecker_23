@@ -46,12 +46,22 @@ function displayResults(results) {
     // if result return as "TRUE"
     if(results[0] == true){
         document.getElementById('msg').textContent = `Your message IS a palindrome: ${results[1]}`;
+        // remove these existing classes
         document.getElementById('alert').classList.remove('invisible');
+        document.getElementById('alert').classList.remove('alert-success');
+        document.getElementById('alert').classList.remove('alert-danger');
+        // add this class
+        document.getElementById('alert').classList.add('alert-success');
     }
     // If the result returns as "FALSE"
     else{
         document.getElementById('msg').textContent = `Your message IS NOT a palindrome: ${results[1]}`;
+        // remove these existing classes
         document.getElementById('alert').classList.remove('invisible');
+        document.getElementById('alert').classList.remove('alert-success');
+        document.getElementById('alert').classList.remove('alert-danger');
+        // add this class
+        document.getElementById('alert').classList.add('alert-danger');
     }
 
 }
